@@ -26,7 +26,7 @@ Lisenced under CC0
 
 ## Credit
 image/page.png  
-[Original Photo](https://unsplash.com/photos/  white-wall-paint-with-black-shadow-3gifzboyZk0) by Unsplash / Kiwihug  
+[Original Photo](https://unsplash.com/photos/white-wall-paint-with-black-shadow-3gifzboyZk0) by Unsplash / Kiwihug  
 Licensed under [Unsplash License](https://unsplash.com/license)
 
 image/marble.png  
