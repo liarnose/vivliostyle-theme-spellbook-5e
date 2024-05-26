@@ -1,7 +1,7 @@
 {
   "name": "@liarnose/vivliostyle-theme-spellbook-5e",
   "description": "Vivliostyle Theme for 5e RPG Fanzine (Unofficial)",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "author": "liarnose <liarnose@gmail.com>",
   "main": "theme.css",
   "scripts": {

@@ -1,29 +1,29 @@
-@import url(./node_modules/@fontsource/noto-serif-jp/500.css);
-@import url(./node_modules/@fontsource/noto-serif-jp/900.css);
+@import url(../../@fontsource/noto-serif-jp/500.css);
+@import url(../../@fontsource/noto-serif-jp/900.css);
 
-@import url(./node_modules/@fontsource/libre-baskerville/400.css);
-@import url(./node_modules/@fontsource/libre-baskerville/400-italic.css);
-@import url(./node_modules/@fontsource/libre-baskerville/700.css);
+@import url(../../@fontsource/libre-baskerville/400.css);
+@import url(../../@fontsource/libre-baskerville/400-italic.css);
+@import url(../../@fontsource/libre-baskerville/700.css);
 
-@import url(./node_modules/@fontsource/YakuHanMP/500.css);
-@import url(./node_modules/@fontsource/YakuHanMP/900.css);
+@import url(../../@fontsource/YakuHanMP/500.css);
+@import url(../../@fontsource/YakuHanMP/900.css);
 
 
-@import url(./node_modules/@fontsource/noto-sans-jp/400.css);
-@import url(./node_modules/@fontsource/noto-sans-jp/500.css);
-@import url(./node_modules/@fontsource/noto-sans-jp/800.css);
+@import url(../../@fontsource/noto-sans-jp/400.css);
+@import url(../../@fontsource/noto-sans-jp/500.css);
+@import url(../../@fontsource/noto-sans-jp/800.css);
 
-@import url(./node_modules/@fontsource/YakuHanJP/400.css);
-@import url(./node_modules/@fontsource/YakuHanJP/500.css);
-@import url(./node_modules/@fontsource/YakuHanJP/700.css);
+@import url(../../@fontsource/YakuHanJP/400.css);
+@import url(../../@fontsource/YakuHanJP/500.css);
+@import url(../../@fontsource/YakuHanJP/700.css);
 
-@import url(./node_modules/@fontsource/ibm-plex-mono/400.css);
-@import url(./node_modules/@fontsource/ibm-plex-mono/700.css);
+@import url(../../@fontsource/ibm-plex-mono/400.css);
+@import url(../../@fontsource/ibm-plex-mono/700.css);
 
-@import url(./node_modules/@fontsource/m-plus-1-code/300.css);
-@import url(./node_modules/@fontsource/m-plus-1-code/700.css);
+@import url(../../@fontsource/m-plus-1-code/300.css);
+@import url(../../@fontsource/m-plus-1-code/700.css);
 
-@import url(./node_modules/@fontsource/material-icons/400.css);
+@import url(../../@fontsource/material-icons/400.css);
 
 
 :root{
