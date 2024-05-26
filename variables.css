@@ -1,0 +1,20 @@
+
+:root{
+    --vs-theme--page-background: 
+        url(image/page-footer.svg) no-repeat center bottom / 100% 22mm ,
+        url(image/page.png) no-repeat 100% 100%,
+        var(--vs-page--color-bg, transparent);
+    --vs-theme--page-background-blend-mode: normal;
+
+    --vs-theme--heading-color: #521005;
+    --vs-theme--heading-line-color: #afa67a;
+
+    --vs-theme--primary-background-color: #ffcbb8;
+
+    --vs-theme--double-blockquote-bg-color: #fcf7eb;
+    --vs-theme--double-blockquote-line-color: #afa67a;
+
+    --vs-theme--blockquote-background-color: var(--vs-theme--primary-background-color);
+    --vs-theme--table-background-color: var(--vs-theme--primary-background-color);
+    --vs-theme--table-font-family: var(--vs-theme--sans-font-family);
+}

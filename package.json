@@ -1,0 +1,51 @@
+{
+  "name": "@liarnose/vivliostyle-theme-spellbook-5e",
+  "description": "Vivliostyle Theme for 5e RPG Fanzine (Unofficial)",
+  "version": "0.1.0",
+  "author": "liarnose <liarnose@gmail.com>",
+  "main": "theme.css",
+  "scripts": {
+    "build": "vivliostyle build",
+    "preview": "vivliostyle preview",
+    "validate": "vivliostyle-theme-scripts validate"
+  },
+  "dependencies": {
+    "@fontsource/ibm-plex-mono": "^5.0.13",
+    "@fontsource/libre-baskerville": "^5.0.13",
+    "@fontsource/m-plus-1-code": "^5.0.19",
+    "@fontsource/material-icons": "^5.0.18",
+    "@fontsource/noto-sans-jp": "^5.0.19",
+    "@fontsource/noto-serif-jp": "^5.0.12",
+    "@fontsource/yakuhanjp": "^5.0.11",
+    "@fontsource/yakuhanmp": "^5.0.11",
+    "@vivliostyle/theme-base": "latest"
+  },
+  "devDependencies": {
+    "@vivliostyle/cli": "latest",
+    "vivliostyle-theme-scripts": "^0.3.6"
+  },
+  "files": [
+    "*.css",
+    "image",
+    "example",
+    "vivliostyle.config.js"
+  ],
+  "keywords": [
+    "vivliostyle",
+    "vivliostyle-theme"
+  ],
+  "license": "CC0-1.0",
+  "vivliostyle": {
+    "theme": {
+      "name": "Vivliostyle Theme Spellbook 5e",
+      "author": "liarnose <liarnose@gmail.com>",
+      "style": "theme.css",
+      "category": "magazine",
+      "topics": [
+        "fanzine",
+        "RPG",
+        "TRPG"
+      ]
+    }
+  }
+}

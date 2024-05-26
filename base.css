@@ -1,0 +1,281 @@
+:root {
+  /* ページサイズ とりあえずA4固定 */
+  --vs-page--size: A4;
+  --vs-page--margin-top: 22mm;
+  --vs-page--margin-bottom: 22mm;
+  --vs-page--margin-inner: 18mm;
+  --vs-page--margin-outer: 18mm;
+
+  --vs-page--color-bg: transparent;
+
+  /* スペースは手作業で付ける */
+  --vs-spacing-rlh: 0;
+
+  /* 横2段組 */
+  --vs-columns: 2;
+  --vs-column-fill: auto;
+  --vs-column-gap: 2rem;
+
+  /* 本文フォント */
+  --vs-font-family: var(--vs-theme--serif-font-family);
+  --vs-font-weight: 500;
+  --vs-font-size: 13q;
+  --vs-line-height: 24q;
+  --vs-color-body: #333;
+  --vs-font-kerning: 0.02;
+
+  /* 太字フォント */
+  --vs--bold-font-family: var(--vs-theme--sans-font-family);
+
+  /* h1 */
+  --vs--h1-line-height: 48q;
+  --vs--h1-font-size: 28q;
+  /* h2 */
+  --vs--h2-line-height: 48q;
+  --vs--h2-font-size: 28q;
+  /* h3 */
+  --vs--h3-line-height: 48q;
+  --vs--h3-font-size: 22q;
+  /* h4 */
+  --vs--h4-line-height: 48q;
+  --vs--h4-font-size: 18q;
+  /* h5 */
+  --vs--h5-line-height: 24q;
+  --vs--h5-font-size: 18q;
+  --vs--h5-font-family: var(--vs-theme--sans-font-family);
+  /* h6 */
+  --vs--h6-line-height: 24q;
+  --vs--h6-font-size: 14q;
+  --vs--h6-font-family: var(--vs-theme--sans-font-family);
+
+  /* ul ol */
+  --vs--ul-padding-inline-start: 1em;
+  --vs--ul-minimum-inline-indent-size: 1em;
+  --vs--ol-padding-inline-start: 1em;
+  --vs--ol-minimum-inline-indent-size: 1em;
+
+  /* blockquote */
+  --vs--blockquote-margin-block: 24q;
+  --vs--blockquote-margin-inline: 0;
+
+  /* table */
+  --vs--table-border-width: 0;
+  --vs--table-cell-padding-block: 0;
+  --vs--table-cell-padding-inline: 4q;
+  --vs--th-font-family: var(--vs-theme--sans-font-family);
+
+  /* pre */
+  --vs--pre-font-size: 10q;
+  --vs--pre-margin-block: 0;
+  --vs--pre-padding-inline: 8q;
+
+  /* ノンブル */
+  --vs-page--mbox-font-size: 10q;
+  --vs-page--mbox-color-body: #666;
+  --vs-page--mbox-content-bottom-center: counter(page);
+}
+
+/* ページ背景にテクスチャ設定 */
+@page {
+  background: var(--vs-theme--page-background);
+  background-blend-mode: var(--vs-theme--page-background-blend-mode);
+}
+
+/* h1～6 */
+h1,
+h2,
+h3,
+h4 {
+  color: var(--vs-theme--heading-color);
+  ;
+}
+
+/* 章タイトルは段組みの外 */
+h1 {
+  /* column-spanが機能しないのでpage floatで回避 */
+  /* https://github.com/vivliostyle/vivliostyle.js/issues/542 */
+  column-span: all;
+  float-reference: page;
+  float: top;
+
+  margin-bottom: 24q;
+  page-break-before: always;
+}
+
+/* 下線の位置を調整 */
+h3 {
+  position: relative;
+}
+
+h3::after {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1q;
+  bottom: 7q;
+  border-bottom: 1q solid;
+  border-color: var(--vs-theme--heading-line-color);
+}
+
+/* p */
+/* 段落が続く場合のみ字下げ */
+p+p {
+  text-indent: 1em;
+}
+
+/* em strong */
+/* *3つの強調は明朝体 */
+strong>em {
+  font-family: var(--vs-theme--serif-font-family);
+}
+
+/* blockquote */
+blockquote {
+  position: relative;
+  padding: 12q;
+
+  /* 背景をアクセントカラーに */
+  background-color: var(--vs-theme--blockquote-background-color);
+  box-shadow: 0 4q 16q rgb(0 0 0 / .2);
+  font-family: var(--vs-theme--sans-font-family);
+
+  break-inside: avoid;
+}
+
+blockquote::before {
+  content: "";
+  position: absolute;
+  top: -12q;
+  left: 0;
+  width: 100%;
+  height: 12q;
+  background-image: url(./image/quote-border1.svg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+blockquote::after {
+  content: "";
+  position: absolute;
+  bottom: -12q;
+  left: 0;
+  width: 100%;
+  height: 12q;
+  background-image: url(./image/quote-border2.svg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+/* テーブルの縞々と背景色が被るので対応 */
+blockquote tbody {
+  background-color: rgb(255, 255, 255, 0.75);
+}
+
+/* blockquoteを二重にすると見た目が変わる */
+blockquote:has(blockquote) {
+  position: relative;
+  padding: 0;
+  background: var(--vs-theme--double-blockquote-bg-color);
+  box-shadow: none;
+  border-inline: 2q solid var(--vs-theme--double-blockquote-line-color);
+}
+
+blockquote:has(blockquote)::before {
+  content: "";
+  position: absolute;
+  height: calc(100% + 6q);
+  width: calc(100% + 8q);
+  top: -3q;
+  left: -4q;
+  background:
+    url(./image/dot.svg) top left / 6q 6q no-repeat,
+    url(./image/dot.svg) top right / 6q 6q no-repeat,
+    url(./image/dot.svg) bottom left / 6q 6q no-repeat,
+    url(./image/dot.svg) bottom right / 6q 6q no-repeat;
+}
+
+blockquote:has(blockquote)::after {
+  content: none;
+}
+
+blockquote>blockquote {
+  position: relative;
+  margin: 0;
+  padding: 12q 12q;
+  background: transparent;
+  box-shadow: none;
+  font-family: var(--vs-theme--sans-font-family);
+  font-weight: 400;
+}
+
+blockquote>blockquote::before,
+blockquote>blockquote::after {
+  content: none;
+}
+
+/* テーブルの縞々解除 */
+blockquote>blockquote table {
+  background-color: transparent;
+}
+
+/* table */
+table {
+  width: 100%;
+  font-family: var(--vs-theme--table-font-family);
+}
+
+/* 奇数行をアクセントカラーに */
+tbody tr:nth-child(odd) {
+  background-color: var(--vs-theme--table-background-color);
+}
+
+/* figure figcaption */
+figcaption {
+  color: #999;
+}
+
+figcaption::before {
+  content: none;
+}
+
+/* pre code */
+/* 元ネタには存在しないが書式サンプルのため使用 */
+figure:has(pre) {
+  display: block;
+  margin-block: 24q;
+  text-align: right;
+  break-inside: auto;
+}
+
+pre {
+  text-align: left;
+  color: #eeeeee;
+  background-color: #3f3d37;
+}
+
+figure:has(pre) figcaption {
+  display: inline-block;
+  padding-inline: 12q;
+
+  font-family: var(--vs--monospace-font-family);
+  font-weight: 700;
+
+  color: #333;
+  background-color: #bdb9b0;
+}
+
+figure:has(pre) figcaption::after {
+  content: " \e3c9";
+  font-family: 'Material Icons';
+  vertical-align: bottom;
+}
+
+/* footnote */
+:not(.footnote)>a[href^='http']::before {
+  display: none;
+}
+
+:not(.footnote)>a[href^='http']::after {
+  display: none;
+}
